@@ -17,20 +17,21 @@ class ActionButton extends StatelessWidget {
     double horizontalPadding = 32;
     double verticalPadding = 12;
     double iconSize = 24;
-    TextStyle buttonTextStyle = button3Semibold;
+    TextStyle buttonTextStyle = buttonBold;
     Color buttonColor = darkPrimaryBrandColor;
 
     switch (viewModel.size) {
       case ActionButtonSize.large:
-        buttonTextStyle = button1Bold;
-        iconSize = 100.0;
+        buttonTextStyle = buttonBold;
+        iconSize = 32.0;
         break;
       case ActionButtonSize.medium:
-        buttonTextStyle = button2Semibold;
+        buttonTextStyle = buttonBold2;
+        horizontalPadding = 24.0;
         iconSize = 24;
         break;
       case ActionButtonSize.small:
-        buttonTextStyle = button3Semibold;
+        buttonTextStyle = buttonBold;
         horizontalPadding = 16;
         iconSize = 16;
         break;
@@ -38,15 +39,31 @@ class ActionButton extends StatelessWidget {
     }
 
     switch (viewModel.style) {
-      case ActionButtonStyle.primary:
-        buttonColor = lightPrimaryBrandColor;
+      case ActionButtonStyle.one:
+        buttonColor = BotonOneColor;
         break;
-      case ActionButtonStyle.secondary:
-        buttonColor = lightSecondaryBrandColor;
+      case ActionButtonStyle.two:
+        buttonColor = BotonTwoColor;
         break;
-      case ActionButtonStyle.tertiary:
-        buttonColor = lightTertiaryBrandColor;
+      case ActionButtonStyle.three:
+        buttonColor = BotonThreeColor;
         break;
+      case ActionButtonStyle.forr:
+        buttonColor = BotonForrColor;
+        break;
+      case ActionButtonStyle.five:
+        buttonColor = BotonFiveColor;
+        break;
+      case ActionButtonStyle.six:
+        buttonColor = BotonSixColor;
+        break;
+      case ActionButtonStyle.seven:
+        buttonColor = BotonSevenColor;
+        break;
+      case ActionButtonStyle.eigth:
+        buttonColor = BotoneigthColor;
+        break;
+
       default:
     }
 

@@ -3,10 +3,14 @@ import 'package:flutter/material.dart';
 enum ActionButtonSize { small, medium, large }
 
 enum ActionButtonStyle {
-  primary,
-  secondary,
-  tertiary,
-  fortiari,
+  one,
+  two,
+  three,
+  forr,
+  five,
+  six,
+  seven,
+  eigth,
 }
 
 class ActionButtonViewModel {

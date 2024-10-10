@@ -129,3 +129,16 @@ const TextStyle navbarLargeTitle = TextStyle(
   fontWeight: FontWeight.w700,
   color: normalPrimaryBaseColorLight,
 );
+
+const TextStyle buttonBold = TextStyle(
+  fontFamily: 'Inter',
+  fontSize: 20,
+  fontWeight: FontWeight.w700,
+  color: thickMaterialColorDark,
+);
+const TextStyle buttonBold2 = TextStyle(
+  fontFamily: 'Inter',
+  fontSize: 18,
+  fontWeight: FontWeight.w700,
+  color: thickMaterialColorDark,
+);

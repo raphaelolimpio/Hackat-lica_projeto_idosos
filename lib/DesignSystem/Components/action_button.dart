@@ -1,8 +1,7 @@
-import 'package:appidoso1/DesignSystem/Components/action_button_view_model.dart';
 import 'package:appidoso1/DesignSystem/shared/colors.dart';
+import 'package:appidoso1/DesignSystem/shared/styles.dart';
 import 'package:flutter/material.dart';
-
-import '../shared/styles.dart';
+import 'action_button_view_model.dart';
 
 class ActionButton extends StatelessWidget {
   final ActionButtonViewModel viewModel;
@@ -18,20 +17,20 @@ class ActionButton extends StatelessWidget {
     double horizontalPadding = 32;
     double verticalPadding = 12;
     double iconSize = 24;
-    TextStyle buttonTextStyle = button3Semibold as TextStyle;
+    TextStyle buttonTextStyle = button3Semibold;
     Color buttonColor = darkPrimaryBrandColor;
 
     switch (viewModel.size) {
       case ActionButtonSize.large:
-        buttonTextStyle = button1Bold as TextStyle;
-        iconSize = 32.0;
+        buttonTextStyle = button1Bold;
+        iconSize = 100.0;
         break;
       case ActionButtonSize.medium:
-        buttonTextStyle = button2Semibold as TextStyle;
+        buttonTextStyle = button2Semibold;
         iconSize = 24;
         break;
       case ActionButtonSize.small:
-        buttonTextStyle = button3Semibold as TextStyle;
+        buttonTextStyle = button3Semibold;
         horizontalPadding = 16;
         iconSize = 16;
         break;
@@ -47,9 +46,6 @@ class ActionButton extends StatelessWidget {
         break;
       case ActionButtonStyle.tertiary:
         buttonColor = lightTertiaryBrandColor;
-        break;
-      case ActionButtonStyle.fortiari:
-        buttonColor = lightSuccessSystemColor;
         break;
       default:
     }

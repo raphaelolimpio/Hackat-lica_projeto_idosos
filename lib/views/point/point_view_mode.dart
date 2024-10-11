@@ -1,6 +1,7 @@
 import 'package:appidoso1/DesignSystem/Components/Buttons/action_button.dart';
 import 'package:appidoso1/DesignSystem/Components/Buttons/action_button_view_model.dart';
 import 'package:appidoso1/DesignSystem/shared/colors.dart';
+import 'package:appidoso1/views/premios/premio_view_mode.dart';
 import 'package:flutter/material.dart';
 
 class PointViewMode extends StatefulWidget {
@@ -136,7 +137,13 @@ class _PointViewModeState extends State<PointViewMode> {
                         ),
                         Center(
                           child: ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => PremioViewMode()),
+                              );
+                            },,
                             style: ElevatedButton.styleFrom(
                               padding: EdgeInsets.symmetric(
                                   horizontal: 50.0, vertical: 15.0),

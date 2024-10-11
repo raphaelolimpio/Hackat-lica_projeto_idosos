@@ -11,6 +11,7 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: PremioViewMode(),
+    debugShowCheckedModeBanner: false,
+    home: HomeVielModel(),
   ));
 }

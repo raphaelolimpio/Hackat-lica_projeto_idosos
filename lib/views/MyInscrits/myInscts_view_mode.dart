@@ -1,19 +1,12 @@
+import 'package:appidoso1/DesignSystem/Components/buildCustomCards/buildCustomCard_view_mode.dart';
 import 'package:appidoso1/DesignSystem/shared/colors.dart';
 import 'package:flutter/material.dart';
 
-class MyInsctsViewMode extends StatefulWidget {
-  const MyInsctsViewMode({super.key});
+class MyinsctsViewMode extends StatelessWidget {
+  final BuildCustomCardViewModel viewModel;
+  final String? selectedDate;
 
-  @override
-  State<MyInsctsViewMode> createState() => _MyInsctsViewModeState();
-}
-
-class _MyInsctsViewModeState extends State<MyInsctsViewMode> {
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-  }
+  MyinsctsViewMode({required this.viewModel, this.selectedDate});
 
   @override
   Widget build(BuildContext context) {
@@ -30,18 +23,19 @@ class _MyInsctsViewModeState extends State<MyInsctsViewMode> {
         backgroundColor: PageOneColor,
         body: Column(
           children: [
-            // dados do usuario
+            // Cabeçalho
             Container(
               width: double.infinity,
-              color: PagerTwoColor, // Mesma cor do AppBar
-              padding: EdgeInsets.symmetric(vertical: 20.0),
+              color: PagerTwoColor,
+              padding: EdgeInsets.only(bottom: 30, top: 10),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Cronograma da Semana", // Exemplo de texto
+                    "Minhas Inscrições",
                     style: TextStyle(color: Colors.white, fontSize: 30.0),
                   ),
+                  const SizedBox(width: 10),
                 ],
               ),
             ),
@@ -51,51 +45,71 @@ class _MyInsctsViewModeState extends State<MyInsctsViewMode> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Padding(
-                      padding: EdgeInsets.all(20.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          SingleChildScrollView(
-                            child: Container(
-                              width: double.infinity,
-                              // Aplicar borda ao Container
-                              decoration: BoxDecoration(
-                                color: PagerThreeColor, // Cor de fundo
-                                border: Border.all(
-                                  // Adicionar borda
-                                  color: Colors.white,
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(
-                                    10), // Bordas arredondadas
-                              ), // Mesma cor do AppBar
-                              padding: EdgeInsets.only(top: 10.0),
-                              child: Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.all(10.0),
-                                    child: SizedBox(
-                                      width: 200,
-                                      height: 550,
-                                      child: Text(
-                                        "Inscrição", // Exemplo de texto
-                                        style: TextStyle(
-                                            color: Colors.black,
-                                            fontSize: 30.0),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          )
-                        ],
+                    SizedBox(height: 20),
+                    Container(
+                      width: double.maxFinite,
+                      decoration: BoxDecoration(
+                        color: PagerThreeColor,
+                        border: Border.all(color: Colors.white, width: 2.0),
+                        borderRadius: BorderRadius.circular(10),
                       ),
-                    )
-                    //tela do meio
+                      padding: EdgeInsets.all(20.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.transparent,
+                          border: Border.all(
+                              color: Colors.grey, width: 2.0), // Gray border
+                          borderRadius:
+                              BorderRadius.circular(10), // Rounded corners
+                        ),
+                        padding: EdgeInsets.all(
+                            10.0), // Padding inside the container
+                        child: Column(
+                          children: [
+                            Text(
+                              viewModel.title,
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                            SizedBox(height: 10),
+                            Text(
+                              viewModel.subtitle,
+                              textAlign: TextAlign.center,
+                            ),
+                            SizedBox(height: 10),
+                            Text(
+                              viewModel.date,
+                              textAlign: TextAlign.center,
+                            ),
+                            SizedBox(height: 20),
+                            // Exibe a data selecionada
+                            if (selectedDate != null)
+                              Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.transparent,
+                                  border: Border.all(
+                                      color: Colors.grey, width: 2.0),
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                padding: EdgeInsets.all(10.0),
+                                child: SizedBox(
+                                  // SizedBox with gray border
+                                  width: double.maxFinite,
+                                  child: Text(
+                                    "Data selecionada: $selectedDate",
+                                    style: TextStyle(fontSize: 18),
+                                    textAlign:
+                                        TextAlign.center, // Center the text
+                                  ),
+                                ),
+                              ),
+                          ],
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),

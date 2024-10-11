@@ -4,10 +4,19 @@ import 'package:appidoso1/DesignSystem/shared/colors.dart';
 import 'package:appidoso1/views/home/home_view_mode.dart';
 import 'package:flutter/material.dart';
 
-class inscriptionViewMode extends StatelessWidget {
+class InscricaoViewMode extends StatefulWidget {
   final BuildCustomCardViewModel viewModel;
 
-  inscriptionViewMode({required this.viewModel});
+  InscricaoViewMode({required this.viewModel});
+
+  @override
+  _InscricaoViewModeState createState() => _InscricaoViewModeState();
+}
+
+class _InscricaoViewModeState extends State<InscricaoViewMode> {
+  // Variáveis para armazenar o estado das checkboxes
+  bool _checkboxValue1 = false;
+  bool _checkboxValue2 = false;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +33,6 @@ class inscriptionViewMode extends StatelessWidget {
         backgroundColor: PageOneColor,
         body: Column(
           children: [
-            // Dados do usuário
             Container(
               width: double.infinity,
               color: PagerTwoColor, // Mesma cor do AppBar
@@ -47,7 +55,6 @@ class inscriptionViewMode extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     SizedBox(height: 20),
-                    // Adicionando uma SizedBox para encapsular os campos
                     Container(
                       width: double.maxFinite, // Tamanho máximo para largura
                       decoration: BoxDecoration(
@@ -60,7 +67,6 @@ class inscriptionViewMode extends StatelessWidget {
                       padding: EdgeInsets.all(20.0), // Padding interno
                       child: Column(
                         children: [
-                          // Texto na parte superior
                           Text(
                             "Nome",
                             style: TextStyle(
@@ -71,7 +77,6 @@ class inscriptionViewMode extends StatelessWidget {
                           ),
                           SizedBox(height: 20),
 
-                          // Informações do botão selecionado (título, subtítulo e data)
                           Container(
                             padding: EdgeInsets.all(15), // Aumentando o padding
                             decoration: BoxDecoration(
@@ -83,7 +88,7 @@ class inscriptionViewMode extends StatelessWidget {
                             child: Column(
                               children: [
                                 Text(
-                                  viewModel.title,
+                                  widget.viewModel.title,
                                   style: TextStyle(
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold,
@@ -92,13 +97,13 @@ class inscriptionViewMode extends StatelessWidget {
                                 ),
                                 SizedBox(height: 10),
                                 Text(
-                                  viewModel.subtitle,
+                                  widget.viewModel.subtitle,
                                   textAlign:
                                       TextAlign.center, // Centraliza o texto
                                 ),
                                 SizedBox(height: 10),
                                 Text(
-                                  viewModel.date,
+                                  widget.viewModel.date,
                                   textAlign:
                                       TextAlign.center, // Centraliza o texto
                                 ),
@@ -110,7 +115,6 @@ class inscriptionViewMode extends StatelessWidget {
                             child: Center(
                               child: ElevatedButton(
                                 onPressed: () {
-                                  // Função para abrir o popup
                                   showDialog(
                                     context: context,
                                     builder: (BuildContext context) {
@@ -119,12 +123,10 @@ class inscriptionViewMode extends StatelessWidget {
                                         title: Text(
                                             'Descrição:'), // Título do popup
                                         content: Column(
-                                          mainAxisSize: MainAxisSize
-                                              .min, // Conteúdo do popup
+                                          mainAxisSize: MainAxisSize.min,
                                           children: [
-                                            // Texto dentro do popup
                                             Text(
-                                              viewModel.title,
+                                              widget.viewModel.title,
                                               style: TextStyle(
                                                 fontSize: 20,
                                                 fontWeight: FontWeight.bold,
@@ -145,7 +147,6 @@ class inscriptionViewMode extends StatelessWidget {
                                                 ),
                                               ),
                                             ),
-                                            // Campo de texto dentro do popup
                                           ],
                                         ),
                                         actions: [
@@ -163,32 +164,37 @@ class inscriptionViewMode extends StatelessWidget {
                                 },
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor:
-                                      BotonTwoColor, // Cor de fundo do botão
-                                  foregroundColor:
-                                      Colors.black, // Cor do texto no botão
+                                      BotonTwoColor, // Cor do botão
+                                  foregroundColor: Colors.black, // Cor do texto
                                   padding: EdgeInsets.symmetric(
-                                      horizontal: 15.0,
-                                      vertical: 10.0), // Padding
+                                      horizontal: 15.0, vertical: 10.0),
                                   textStyle: TextStyle(
                                     fontSize: 16.0,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
-                                child: Text('Descrição'), // Texto do botão
+                                child: Text('Descrição'),
                               ),
                             ),
                           ),
 
                           SizedBox(height: 20),
 
-                          // Campos de texto e checkboxes
+                          // Checkboxes
                           SizedBox(
                             width: double.infinity,
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text("02/02/2024:"),
-                                Checkbox(value: false, onChanged: (value) {}),
+                                Text("16:30\n 17:30"),
+                                Checkbox(
+                                  value: _checkboxValue1,
+                                  onChanged: (bool? value) {
+                                    setState(() {
+                                      _checkboxValue1 = value ?? false;
+                                    });
+                                  },
+                                ),
                               ],
                             ),
                           ),
@@ -197,17 +203,22 @@ class inscriptionViewMode extends StatelessWidget {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text("03/03/2024:"),
-                                Checkbox(value: false, onChanged: (value) {}),
+                                Text("18:30\n 19:30"),
+                                Checkbox(
+                                  value: _checkboxValue2,
+                                  onChanged: (bool? value) {
+                                    setState(() {
+                                      _checkboxValue2 = value ?? false;
+                                    });
+                                  },
+                                ),
                               ],
                             ),
                           ),
 
-                          // Botão no final
                           SizedBox(height: 20),
                           ElevatedButton(
                             onPressed: () {
-                              // Navega para a página HomeViewModel
                               Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
@@ -221,10 +232,10 @@ class inscriptionViewMode extends StatelessWidget {
                                 fontSize: 16.0,
                                 fontWeight: FontWeight.bold,
                               ),
-                              backgroundColor: BotonTwoColor, // Cor do botão
-                              foregroundColor: Colors.black, // Cor do texto
+                              backgroundColor: BotonTwoColor,
+                              foregroundColor: Colors.black,
                             ),
-                            child: Text("Finalizar"), // Texto do botão
+                            child: Text("Finalizar"),
                           ),
                         ],
                       ),

@@ -3,7 +3,8 @@ import 'package:appidoso1/DesignSystem/Components/Buttons/action_button_view_mod
 import 'package:appidoso1/DesignSystem/Components/buildCustomCards/buildCustomCard_view_mode.dart';
 import 'package:appidoso1/DesignSystem/Components/buildCustomCards/buildcunstomcard.dart';
 import 'package:appidoso1/DesignSystem/shared/colors.dart';
-import 'package:appidoso1/views/inscricao/redeem_view_mode.dart';
+import 'package:appidoso1/views/MyInscrits/myInscts_view_mode.dart';
+import 'package:appidoso1/views/inscricao/inscricao_view_mode.dart';
 import 'package:flutter/material.dart';
 
 class SheduleViewMode extends StatefulWidget {
@@ -31,8 +32,14 @@ class _SheduleViewModeState extends State<SheduleViewMode> {
     _actionButtonViewModel1 = ActionButtonViewModel(
       size: ActionButtonSize.medium,
       style: ActionButtonStyle.one,
-      text: "Minhas Inscriçoes",
-      onPressed: () {},
+      text: "Minhas Inscrições",
+      onPressed: () => Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) =>
+              MyinsctsViewMode(viewModel: _BuildCustomCardViewModel1),
+        ),
+      ),
     );
     _BuildCustomCardViewModel1 = BuildCustomCardViewModel(
       title: "Caminhada",
@@ -43,7 +50,7 @@ class _SheduleViewModeState extends State<SheduleViewMode> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => inscriptionViewMode(
+            builder: (context) => InscricaoViewMode(
               viewModel: _BuildCustomCardViewModel1,
             ),
           ),
@@ -59,7 +66,7 @@ class _SheduleViewModeState extends State<SheduleViewMode> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => inscriptionViewMode(
+            builder: (context) => InscricaoViewMode(
               viewModel: _BuildCustomCardViewModel2,
             ),
           ),
@@ -75,7 +82,7 @@ class _SheduleViewModeState extends State<SheduleViewMode> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => inscriptionViewMode(
+            builder: (context) => InscricaoViewMode(
               viewModel: _BuildCustomCardViewModel3,
             ),
           ),
@@ -91,7 +98,7 @@ class _SheduleViewModeState extends State<SheduleViewMode> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => inscriptionViewMode(
+            builder: (context) => InscricaoViewMode(
               viewModel: _BuildCustomCardViewModel4,
             ),
           ),
@@ -108,7 +115,7 @@ class _SheduleViewModeState extends State<SheduleViewMode> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => inscriptionViewMode(
+            builder: (context) => InscricaoViewMode(
               viewModel: _BuildCustomCardViewModel5,
             ),
           ),
@@ -124,7 +131,7 @@ class _SheduleViewModeState extends State<SheduleViewMode> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => inscriptionViewMode(
+            builder: (context) => InscricaoViewMode(
               viewModel: _BuildCustomCardViewModel6,
             ),
           ),
@@ -140,7 +147,7 @@ class _SheduleViewModeState extends State<SheduleViewMode> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => inscriptionViewMode(
+            builder: (context) => InscricaoViewMode(
               viewModel: _BuildCustomCardViewModel7,
             ),
           ),
@@ -156,7 +163,7 @@ class _SheduleViewModeState extends State<SheduleViewMode> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => inscriptionViewMode(
+            builder: (context) => InscricaoViewMode(
               viewModel: _BuildCustomCardViewModel8,
             ),
           ),

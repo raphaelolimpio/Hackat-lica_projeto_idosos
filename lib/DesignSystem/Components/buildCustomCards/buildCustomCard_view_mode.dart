@@ -5,7 +5,7 @@ class BuildCustomCardViewModel {
   final String subtitle;
   final String date;
   final String buttonText;
-  final VoidCallback onButtonPressed;
+  final void Function(BuildContext context) onButtonPressed;
 
   BuildCustomCardViewModel({
     required this.title,

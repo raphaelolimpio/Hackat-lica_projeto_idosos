@@ -3,6 +3,7 @@ import 'package:appidoso1/DesignSystem/Components/Buttons/action_button_view_mod
 import 'package:appidoso1/DesignSystem/Components/buildCustomCards/buildCustomCard_view_mode.dart';
 import 'package:appidoso1/DesignSystem/Components/buildCustomCards/buildcunstomcard.dart';
 import 'package:appidoso1/DesignSystem/shared/colors.dart';
+import 'package:appidoso1/views/redeem/redeem_view_mode.dart';
 import 'package:flutter/material.dart';
 
 class SheduleViewMode extends StatefulWidget {
@@ -35,31 +36,67 @@ class _SheduleViewModeState extends State<SheduleViewMode> {
     );
     _BuildCustomCardViewModel1 = BuildCustomCardViewModel(
       title: "Caminhada",
-      subtitle: 'Responsavel:\n João Silva',
+      subtitle: 'Responsável:\n João Silva',
       date: 'Dias:\n 02/02/2024\n 03/03/2024',
-      buttonText: 'Inscrver',
-      onButtonPressed: () {},
+      buttonText: 'Inscrever',
+      onButtonPressed: (BuildContext context) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => RedeemViewMode(
+              viewModel: _BuildCustomCardViewModel1,
+            ),
+          ),
+        );
+      },
     );
     _BuildCustomCardViewModel2 = BuildCustomCardViewModel(
       title: "Natação ou Hidroginástica",
       subtitle: 'Responsavel:\n João Silva',
       date: 'Dias:\n 02/02/2024\n 03/03/2024',
       buttonText: 'Inscrver',
-      onButtonPressed: () {},
+      onButtonPressed: (BuildContext context) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => RedeemViewMode(
+              viewModel: _BuildCustomCardViewModel2,
+            ),
+          ),
+        );
+      },
     );
     _BuildCustomCardViewModel3 = BuildCustomCardViewModel(
       title: "Aulas de Tai Chi",
       subtitle: 'Responsavel:\n João Silva',
       date: 'Dias:\n 02/02/2024\n 03/03/2024',
       buttonText: 'Inscrver',
-      onButtonPressed: () {},
+      onButtonPressed: (BuildContext context) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => RedeemViewMode(
+              viewModel: _BuildCustomCardViewModel3,
+            ),
+          ),
+        );
+      },
     );
     _BuildCustomCardViewModel4 = BuildCustomCardViewModel(
       title: "Pilates p/ Terceira Idade",
       subtitle: 'Responsavel:\n João Silva',
       date: 'Dias:\n 02/02/2024\n 03/03/2024',
       buttonText: 'Inscrver',
-      onButtonPressed: () {},
+      onButtonPressed: (BuildContext context) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => RedeemViewMode(
+              viewModel: _BuildCustomCardViewModel4,
+            ),
+          ),
+        );
+      },
     );
 
     _BuildCustomCardViewModel5 = BuildCustomCardViewModel(
@@ -67,28 +104,64 @@ class _SheduleViewModeState extends State<SheduleViewMode> {
       subtitle: 'Responsavel:\n João Silva',
       date: 'Dias:\n 02/02/2024\n 03/03/2024',
       buttonText: 'Inscrver',
-      onButtonPressed: () {},
+      onButtonPressed: (BuildContext context) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => RedeemViewMode(
+              viewModel: _BuildCustomCardViewModel5,
+            ),
+          ),
+        );
+      },
     );
     _BuildCustomCardViewModel6 = BuildCustomCardViewModel(
       title: "Yoga p/Idosos",
       subtitle: 'Responsavel:\n João Silva',
       date: 'Dias:\n 02/02/2024\n 03/03/2024',
       buttonText: 'Inscrver',
-      onButtonPressed: () {},
+      onButtonPressed: (BuildContext context) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => RedeemViewMode(
+              viewModel: _BuildCustomCardViewModel6,
+            ),
+          ),
+        );
+      },
     );
     _BuildCustomCardViewModel7 = BuildCustomCardViewModel(
       title: "Dança Senior",
       subtitle: 'Responsavel:\n João Silva',
       date: 'Dias:\n 02/02/2024\n 03/03/2024',
       buttonText: 'Inscrver',
-      onButtonPressed: () {},
+      onButtonPressed: (BuildContext context) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => RedeemViewMode(
+              viewModel: _BuildCustomCardViewModel7,
+            ),
+          ),
+        );
+      },
     );
     _BuildCustomCardViewModel8 = BuildCustomCardViewModel(
       title: "Ginástica para Tereira Idade",
       subtitle: 'Responsavel:\n João Silva',
       date: 'Dias:\n 02/02/2024\n 03/03/2024',
       buttonText: 'Inscrver',
-      onButtonPressed: () {},
+      onButtonPressed: (BuildContext context) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => RedeemViewMode(
+              viewModel: _BuildCustomCardViewModel8,
+            ),
+          ),
+        );
+      },
     );
   }
 

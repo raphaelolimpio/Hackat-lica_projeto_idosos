@@ -52,7 +52,7 @@ class BuildCustomCard extends StatelessWidget {
                 ),
                 const SizedBox(width: 10.0),
                 ElevatedButton(
-                  onPressed: viewModel.onButtonPressed,
+                  onPressed: () => viewModel.onButtonPressed(context),
                   style: ElevatedButton.styleFrom(
                     padding:
                         EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),

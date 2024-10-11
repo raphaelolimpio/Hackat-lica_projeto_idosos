@@ -1,14 +1,14 @@
 import 'package:appidoso1/DesignSystem/shared/colors.dart';
 import 'package:flutter/material.dart';
 
-class InscriptionViewMode extends StatefulWidget {
-  const InscriptionViewMode({super.key});
+class MyInsctsViewMode extends StatefulWidget {
+  const MyInsctsViewMode({super.key});
 
   @override
-  State<InscriptionViewMode> createState() => _InscriptionViewModeState();
+  State<MyInsctsViewMode> createState() => _MyInsctsViewModeState();
 }
 
-class _InscriptionViewModeState extends State<InscriptionViewMode> {
+class _MyInsctsViewModeState extends State<MyInsctsViewMode> {
   @override
   void initState() {
     // TODO: implement initState

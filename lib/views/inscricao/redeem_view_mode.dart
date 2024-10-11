@@ -1,11 +1,13 @@
+import 'package:appidoso1/DesignSystem/Components/Buttons/action_button_view_model.dart';
 import 'package:appidoso1/DesignSystem/Components/buildCustomCards/buildCustomCard_view_mode.dart';
 import 'package:appidoso1/DesignSystem/shared/colors.dart';
+import 'package:appidoso1/views/home/home_view_mode.dart';
 import 'package:flutter/material.dart';
 
-class RedeemViewMode extends StatelessWidget {
+class inscriptionViewMode extends StatelessWidget {
   final BuildCustomCardViewModel viewModel;
 
-  RedeemViewMode({required this.viewModel});
+  inscriptionViewMode({required this.viewModel});
 
   @override
   Widget build(BuildContext context) {
@@ -103,6 +105,80 @@ class RedeemViewMode extends StatelessWidget {
                               ],
                             ),
                           ),
+                          Padding(
+                            padding: EdgeInsets.all(10),
+                            child: Center(
+                              child: ElevatedButton(
+                                onPressed: () {
+                                  // Função para abrir o popup
+                                  showDialog(
+                                    context: context,
+                                    builder: (BuildContext context) {
+                                      return AlertDialog(
+                                        backgroundColor: PagerThreeColor,
+                                        title: Text(
+                                            'Descrição:'), // Título do popup
+                                        content: Column(
+                                          mainAxisSize: MainAxisSize
+                                              .min, // Conteúdo do popup
+                                          children: [
+                                            // Texto dentro do popup
+                                            Text(
+                                              viewModel.title,
+                                              style: TextStyle(
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                              textAlign: TextAlign.center,
+                                            ),
+                                            SizedBox(height: 20),
+                                            Padding(
+                                              padding: EdgeInsets.all(10.0),
+                                              child: SizedBox(
+                                                width: 100,
+                                                height: 100,
+                                                child: Text(
+                                                  "", // Exemplo de texto
+                                                  style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontSize: 30.0),
+                                                ),
+                                              ),
+                                            ),
+                                            // Campo de texto dentro do popup
+                                          ],
+                                        ),
+                                        actions: [
+                                          TextButton(
+                                            child: Text('Fechar'),
+                                            onPressed: () {
+                                              Navigator.of(context)
+                                                  .pop(); // Fecha o popup
+                                            },
+                                          ),
+                                        ],
+                                      );
+                                    },
+                                  );
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor:
+                                      BotonTwoColor, // Cor de fundo do botão
+                                  foregroundColor:
+                                      Colors.black, // Cor do texto no botão
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: 15.0,
+                                      vertical: 10.0), // Padding
+                                  textStyle: TextStyle(
+                                    fontSize: 16.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                child: Text('Descrição'), // Texto do botão
+                              ),
+                            ),
+                          ),
+
                           SizedBox(height: 20),
 
                           // Campos de texto e checkboxes
@@ -130,7 +206,14 @@ class RedeemViewMode extends StatelessWidget {
                           // Botão no final
                           SizedBox(height: 20),
                           ElevatedButton(
-                            onPressed: () => viewModel.onButtonPressed(context),
+                            onPressed: () {
+                              // Navega para a página HomeViewModel
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => HomeVielModel()),
+                              );
+                            },
                             style: ElevatedButton.styleFrom(
                               padding: EdgeInsets.symmetric(
                                   horizontal: 20.0, vertical: 15.0),
@@ -138,8 +221,8 @@ class RedeemViewMode extends StatelessWidget {
                                 fontSize: 16.0,
                                 fontWeight: FontWeight.bold,
                               ),
-                              backgroundColor: BotonTwoColor,
-                              foregroundColor: Colors.black,
+                              backgroundColor: BotonTwoColor, // Cor do botão
+                              foregroundColor: Colors.black, // Cor do texto
                             ),
                             child: Text("Finalizar"), // Texto do botão
                           ),

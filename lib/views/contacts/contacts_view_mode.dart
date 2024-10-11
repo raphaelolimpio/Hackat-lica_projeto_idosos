@@ -22,25 +22,25 @@ class _ContactsViewModeState extends State<ContactsViewMode> {
     _actionButtonViewModel1 = ActionButtonViewModel(
       size: ActionButtonSize.large,
       style: ActionButtonStyle.five,
-      text: "Contato",
+      text: "Contato1",
       onPressed: () {},
     );
     _actionButtonViewModel2 = ActionButtonViewModel(
       size: ActionButtonSize.large,
       style: ActionButtonStyle.six,
-      text: "Contato",
+      text: "Contato2",
       onPressed: () {},
     );
     _actionButtonViewModel3 = ActionButtonViewModel(
       size: ActionButtonSize.large,
       style: ActionButtonStyle.seven,
-      text: "Contato",
+      text: "Contato3",
       onPressed: () {},
     );
     _actionButtonViewModel4 = ActionButtonViewModel(
       size: ActionButtonSize.large,
       style: ActionButtonStyle.eigth,
-      text: "Contato",
+      text: "Contato4",
       onPressed: () {},
     );
   }
@@ -73,7 +73,7 @@ class _ContactsViewModeState extends State<ContactsViewMode> {
                     child: Column(
                       children: [
                         Text(
-                          "Contatos dos Resposaveis", // Exemplo de texto
+                          "Contatos dos Resposáveis", // Exemplo de texto
                           style: TextStyle(color: Colors.white, fontSize: 25.0),
                         ),
                       ],

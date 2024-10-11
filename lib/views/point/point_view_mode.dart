@@ -143,7 +143,7 @@ class _PointViewModeState extends State<PointViewMode> {
                                 MaterialPageRoute(
                                     builder: (context) => PremioViewMode()),
                               );
-                            },,
+                            },
                             style: ElevatedButton.styleFrom(
                               padding: EdgeInsets.symmetric(
                                   horizontal: 50.0, vertical: 15.0),

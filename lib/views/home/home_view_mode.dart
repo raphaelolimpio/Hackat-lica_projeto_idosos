@@ -110,9 +110,27 @@ class _HomeVielModelState extends State<HomeVielModel> {
                       child: Avatar(viewModel: _AvatarViewModel)),
                   Padding(
                     padding: EdgeInsets.all(10),
-                    child: Text(
-                      "Nome Sobrenome", // Exemplo de texto
-                      style: TextStyle(color: Colors.white, fontSize: 20.0),
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.all(10),
+                          child: Text(
+                            "Nome Sobrenome", // Exemplo de texto
+                            style:
+                                TextStyle(color: Colors.white, fontSize: 20.0),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                              vertical:
+                                  0.0), // Ajuste o padding conforme necessário
+                          child: Text(
+                            "Você Possui: 100 Pontos", // Exemplo de texto
+                            style:
+                                TextStyle(color: Colors.white, fontSize: 12.0),
+                          ),
+                        ),
+                      ],
                     ),
                   )
                 ],

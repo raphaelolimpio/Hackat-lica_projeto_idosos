@@ -35,6 +35,11 @@ class ActionButton extends StatelessWidget {
         horizontalPadding = 16;
         iconSize = 16;
         break;
+      case ActionButtonSize.small2:
+        buttonTextStyle = button3Semibold;
+        horizontalPadding = 16;
+        iconSize = 16;
+        break;
       default:
     }
 
@@ -62,6 +67,9 @@ class ActionButton extends StatelessWidget {
         break;
       case ActionButtonStyle.eigth:
         buttonColor = BotoneigthColor;
+        break;
+      case ActionButtonStyle.nine:
+        buttonColor = bottonLog;
         break;
 
       default:

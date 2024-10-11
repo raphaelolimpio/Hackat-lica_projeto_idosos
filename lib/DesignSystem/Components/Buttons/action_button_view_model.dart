@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-enum ActionButtonSize { small, medium, large }
+enum ActionButtonSize { small, medium, large, small2 }
 
 enum ActionButtonStyle {
   one,
@@ -11,6 +11,7 @@ enum ActionButtonStyle {
   six,
   seven,
   eigth,
+  nine,
 }
 
 class ActionButtonViewModel {

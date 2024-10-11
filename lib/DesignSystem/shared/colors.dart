@@ -77,3 +77,5 @@ const Color BotoneigthColor = Color(0xff385ba4);
 const Color PageOneColor = Color(0xff000a46);
 const Color PagerTwoColor = Color(0xff27347e);
 const Color PagerThreeColor = Color(0xfff5ffa1);
+
+const Color bottonLog = Color(0xff119a50);

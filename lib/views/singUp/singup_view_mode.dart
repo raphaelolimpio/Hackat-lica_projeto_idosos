@@ -51,7 +51,7 @@ class _SingUpViewModelState extends State<SingUpViewModel> {
     //botão
     _singUpButtonViewModel = ActionButtonViewModel(
       size: ActionButtonSize.large,
-      style: ActionButtonStyle.one,
+      style: ActionButtonStyle.nine,
       text: 'Singup',
       onPressed: () {
         Navigator.push(
@@ -62,15 +62,15 @@ class _SingUpViewModelState extends State<SingUpViewModel> {
     );
 
     _creatAccountButtonViewModel = ActionButtonViewModel(
+      size: ActionButtonSize.small2,
+      style: ActionButtonStyle.nine,
+      text: "Login",
       onPressed: () {
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => const LoginViewModel()),
         );
       },
-      size: ActionButtonSize.small,
-      style: ActionButtonStyle.one,
-      text: "Login",
     );
 
     _linkedLabelViewModel = LinkedLabelViewModel(

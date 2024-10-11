@@ -31,7 +31,7 @@ class _PointViewModeState extends State<PointViewMode> {
       child: Scaffold(
         appBar: AppBar(
           title: Text(
-            "Home page",
+            "",
             style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.w400),
           ),
           backgroundColor: PagerTwoColor,
@@ -54,7 +54,7 @@ class _PointViewModeState extends State<PointViewMode> {
                       width: 200,
                       height: 200,
                       child: Text(
-                        "Nome Sobrenome", // Exemplo de texto
+                        "", // Exemplo de texto
                         style: TextStyle(color: Colors.white, fontSize: 20.0),
                       ),
                     ),

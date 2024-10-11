@@ -1,7 +1,13 @@
 import 'package:appidoso1/DesignSystem/Components/Buttons/action_button.dart';
 import 'package:appidoso1/DesignSystem/Components/Buttons/action_button_view_model.dart';
+import 'package:appidoso1/DesignSystem/Components/imagens/avatar/avatar.dart';
+import 'package:appidoso1/DesignSystem/Components/imagens/avatar/avatar_view_mode.dart';
 import 'package:appidoso1/DesignSystem/shared/colors.dart';
+import 'package:appidoso1/views/contacts/contacts_view_mode.dart';
+import 'package:appidoso1/views/point/point_view_mode.dart';
+import 'package:appidoso1/views/shedule/shedule_view_mode.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 class HomeVielModel extends StatefulWidget {
   const HomeVielModel({super.key});
@@ -15,10 +21,26 @@ class _HomeVielModelState extends State<HomeVielModel> {
   late ActionButtonViewModel _actionButtonViewModel2;
   late ActionButtonViewModel _actionButtonViewModel3;
   late ActionButtonViewModel _actionButtonViewModel4;
+  late AvatarViewModel _AvatarViewModel;
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
+
+    _AvatarViewModel = AvatarViewModel(
+      model: AvatarModel.small,
+      addImageIcon: Icon(Icons.add_a_photo),
+      allowEdit: true,
+      removeImageIcon: Icon(Icons.remove_circle),
+      onImageChanged: (image) {},
+      getImageSource: () async {
+        return ImageSource.gallery;
+      },
+      getPreferredCameraDevice: () async {
+        return CameraDevices.rear;
+      },
+      onImageRemoved: () {},
+    );
     _actionButtonViewModel1 = ActionButtonViewModel(
       size: ActionButtonSize.large,
       style: ActionButtonStyle.one,
@@ -29,19 +51,34 @@ class _HomeVielModelState extends State<HomeVielModel> {
       size: ActionButtonSize.large,
       style: ActionButtonStyle.two,
       text: "Contatos",
-      onPressed: () {},
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const ContactsViewMode()),
+        );
+      },
     );
     _actionButtonViewModel3 = ActionButtonViewModel(
       size: ActionButtonSize.large,
       style: ActionButtonStyle.three,
       text: "Pontos",
-      onPressed: () {},
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const PointViewMode()),
+        );
+      },
     );
     _actionButtonViewModel4 = ActionButtonViewModel(
       size: ActionButtonSize.large,
       style: ActionButtonStyle.forr,
       text: "Agenda",
-      onPressed: () {},
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const SheduleViewMode()),
+        );
+      },
     );
   }
 
@@ -51,7 +88,7 @@ class _HomeVielModelState extends State<HomeVielModel> {
       child: Scaffold(
         appBar: AppBar(
           title: Text(
-            "Home page",
+            "",
             style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.w400),
           ),
           backgroundColor: PagerTwoColor,
@@ -66,12 +103,18 @@ class _HomeVielModelState extends State<HomeVielModel> {
               color: PagerTwoColor, // Mesma cor do AppBar
               padding: EdgeInsets.symmetric(vertical: 20.0),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    "Nome Sobrenome", // Exemplo de texto
-                    style: TextStyle(color: Colors.white, fontSize: 20.0),
-                  ),
+                  Padding(
+                      padding: EdgeInsets.all(0),
+                      child: Avatar(viewModel: _AvatarViewModel)),
+                  Padding(
+                    padding: EdgeInsets.all(10),
+                    child: Text(
+                      "Nome Sobrenome", // Exemplo de texto
+                      style: TextStyle(color: Colors.white, fontSize: 20.0),
+                    ),
+                  )
                 ],
               ),
             ),

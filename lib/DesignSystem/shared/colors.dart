@@ -25,6 +25,7 @@ const Color darkPrimaryBaseColorLight = Color(0xff000000);
 //Base colors
 
 //Material colors
+const Color fontColor = Colors.white;
 const Color thickMaterialColorDark = Color.fromARGB(212, 21, 21, 21);
 const Color regularMaterialColorDark = Color.fromARGB(175, 24, 24, 24);
 const Color thinMaterialColorDark = Color.fromARGB(162, 17, 17, 17);

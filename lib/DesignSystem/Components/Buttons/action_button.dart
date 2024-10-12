@@ -91,10 +91,16 @@ class ActionButton extends StatelessWidget {
                   viewModel.icon,
                   size: iconSize,
                 ),
-                Text(viewModel.text)
+                Text(
+                  viewModel.text,
+                  style: TextStyle(color: Colors.white),
+                )
               ],
             )
-          : Text(viewModel.text),
+          : Text(
+              viewModel.text,
+              style: TextStyle(color: Colors.white),
+            ),
     );
   }
 }

@@ -1,6 +1,6 @@
+import 'package:appidoso1/DesignSystem/shared/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'colors.dart';
 
 const TextStyle heading1Light = TextStyle(
   fontFamily: 'Inter',
@@ -26,13 +26,13 @@ const TextStyle button3Semibold = TextStyle(
 
 const TextStyle buttonBold = TextStyle(
   fontFamily: 'Inter',
-  fontSize: 20,
-  fontWeight: FontWeight.w700,
-  color: Colors.black,
+  fontSize: 25,
+  fontWeight: FontWeight.w800,
+  color: fontColor,
 );
 const TextStyle buttonBold2 = TextStyle(
   fontFamily: 'Inter',
   fontSize: 18,
   fontWeight: FontWeight.w700,
-  color: Colors.black,
+  color: Colors.white,
 );
